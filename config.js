@@ -9,7 +9,8 @@ const config = {}
 //-----------------------------------------------------
 //                                            C O R E
 //-----------------------------------------------------
-config.projectName = process.env.PROJECT_NAME || "Sankar_skeleton"
+config.projectName = process.env.PROJECT_NAME || "Boilerplate"
+config.projectDesc = process.env.PROJECT_DESC || "A sample boiler plate for express js"
 config.environment = process.env.NODE_ENV || "development"
 config.port = process.env.PORT || "3000"
 
@@ -36,7 +37,6 @@ config.tokenInfo = {
 //-----------------------------------------------------
 
 config.mongoCred = {
-  name: process.env.MONGO_DB_NAME,
   connectionUri: process.env.MONGODB_CONNECTION_STRING
 }
 

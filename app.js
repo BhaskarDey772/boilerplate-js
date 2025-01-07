@@ -5,7 +5,8 @@ const cors = require("cors")
 const morgan = require("morgan")
 const path = require("path")
 const logger = require("./lib/core/logger")
-const { corsUrl, environment, traceStackForAllError } = require("./config")
+const { corsUrl, environment, traceStackForAllError, port } = require("./config")
+const {swaggerDocs} = require("./swagger")
 
 require("./database") // initialize database
 const { NotFoundError, ApiError, InternalError } = require("./lib/core/apiError")
@@ -47,6 +48,9 @@ app.use(express.static(path.join(__dirname, "public")))
 // Routes
 app.use("/v1", apiRouterV1)
 app.use("/w1", webRouterV1)
+
+//Swagger
+swaggerDocs(app, port)
 
 // Send Path not found error
 app.use((req, res, next) => {
