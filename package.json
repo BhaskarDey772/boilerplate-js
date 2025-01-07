@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A starter template for Express JS apps.",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "repository": {
     "type": "git",
